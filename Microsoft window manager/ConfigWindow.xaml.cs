@@ -36,7 +36,19 @@ namespace Microsoft_window_manager
 
         private void changeblock(object sender, RoutedEventArgs e)
         {
-
+            Passwordinput i = new Passwordinput();
+            i.ShowDialog();
+            if (i.password == File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/.clicklocker/pass.dat"))
+            {
+                Areaselector a = new Areaselector();
+                this.Hide();
+                a.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Wrong password");
+            }
         }
 
         private void Exit(object sender, RoutedEventArgs e)

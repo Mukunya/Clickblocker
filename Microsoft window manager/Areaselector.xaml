@@ -1,0 +1,15 @@
+﻿<Window x:Class="Microsoft_window_manager.Areaselector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Microsoft_window_manager"
+        mc:Ignorable="d"
+        Title="Areaselector" KeyUp="keyup" WindowStyle="None" AllowsTransparency="True" Top="0" Left="0" Topmost="True" Height="450" Width="800"  MouseDown="Mousedown" MouseMove="Mousemove" MouseUp="Mouseup">
+    <Window.Background>
+        <SolidColorBrush Opacity="0.01" Color="White"/>
+    </Window.Background>
+    <Canvas x:Name="Maincanvas" >
+        
+    </Canvas>
+</Window>
