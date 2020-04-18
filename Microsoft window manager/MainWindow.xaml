@@ -5,12 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Microsoft_window_manager"
         mc:Ignorable="d"
-        Title="MainWindow" AllowsTransparency="True"  ShowInTaskbar="False" WindowStartupLocation="CenterScreen" WindowStyle="None" Height="450" Width="800" Closing="Close"
-        >
+        Title="Microsoft window manager" AllowsTransparency="True"  ShowInTaskbar="False" WindowStyle="None" Height="450" Width="800" Closing="Close"
+        Top="0" Left="0" Topmost="True">
     <Window.Background>
         <SolidColorBrush Opacity="0" Color="White"/>
     </Window.Background>
     <Canvas>
-        <Rectangle Height="50" Width="50" Fill="#02000000" />
+        <!--<Rectangle Height="50" Width="1920" Fill="#01000000" RenderTransformOrigin="0.5,0.5" >
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="1030"/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>-->
     </Canvas>
 </Window>

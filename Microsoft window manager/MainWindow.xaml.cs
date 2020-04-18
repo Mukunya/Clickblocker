@@ -26,19 +26,16 @@ namespace Microsoft_window_manager
             InitializeComponent();
             this.Width = SystemParameters.PrimaryScreenWidth;
             this.Height = SystemParameters.PrimaryScreenHeight;
-            this.Topmost = true;
-            this.Top = 0;
-            this.Left = 0;
         }
 
         private void Close(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            this.Closing -= Close;
             if (!AuthClose)
             {
-                e.Cancel = true;
+                Window w = new MainWindow();
+                w.Show();
             }
-            base.OnClosing(e);
+            System.Threading.Thread.Sleep(50);
         }
     }
 }
