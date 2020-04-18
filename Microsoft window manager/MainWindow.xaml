@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:Microsoft_window_manager"
         mc:Ignorable="d"
         Title="Microsoft window manager" AllowsTransparency="True"  ShowInTaskbar="False" WindowStyle="None" Height="450" Width="800" Closing="Close"
-        Top="0" Left="0" Topmost="True">
+        Top="0" Left="0" Topmost="True" KeyUp="keup">
     <Window.Background>
         <SolidColorBrush Opacity="0" Color="White"/>
     </Window.Background>
-    <Canvas>
+    <Canvas Background="#00000000" x:Name="maincanvas">
         <!--<Rectangle Height="50" Width="1920" Fill="#01000000" RenderTransformOrigin="0.5,0.5" >
             <Rectangle.RenderTransform>
                 <TransformGroup>
