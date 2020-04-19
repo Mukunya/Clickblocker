@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1062
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft window manager", "Microsoft window manager\Microsoft window manager.csproj", "{BB3F5A70-5F8A-4FF2-B897-5F73420F84FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clickblocker", "Microsoft window manager\Clickblocker.csproj", "{BB3F5A70-5F8A-4FF2-B897-5F73420F84FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

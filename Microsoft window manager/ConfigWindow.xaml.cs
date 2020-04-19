@@ -15,6 +15,7 @@ using MahApps.Metro.Controls;
 using MahApps.Metro.SimpleChildWindow;
 using System.Security.Cryptography;
 using System.IO;
+using VBase;
 
 namespace Microsoft_window_manager
 {
@@ -27,6 +28,17 @@ namespace Microsoft_window_manager
         public ConfigWindow()
         {
             InitializeComponent();
+            this.Hide();
+            Passwordinput i = new Passwordinput();
+            i.ShowDialog();
+            if (i.password == File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/.clicklocker/pass.dat"))
+            {
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Wrong password");
+            }
         }
         private void Changepassword(object sender, RoutedEventArgs e)
         {
@@ -36,38 +48,29 @@ namespace Microsoft_window_manager
 
         private void changeblock(object sender, RoutedEventArgs e)
         {
-            Passwordinput i = new Passwordinput();
-            i.ShowDialog();
-            if (i.password == File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/.clicklocker/pass.dat"))
-            {
-                Areaselector a = new Areaselector();
-                this.Hide();
-                a.ShowDialog();
-                this.Show();
-            }
-            else
-            {
-                MessageBox.Show("Wrong password");
-            }
+
+            Areaselector a = new Areaselector();
+            this.Hide();
+            a.ShowDialog();
+            this.Show();
+
         }
 
         private void Exit(object sender, RoutedEventArgs e)
         {
-            Passwordinput i = new Passwordinput();
-            i.ShowDialog();
-            if (i.password == File.ReadAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/.clicklocker/pass.dat"))
-            {
-                Environment.Exit(0);
-            }
-            else
-            {
-                MessageBox.Show("Wrong password");
-            }
+            Environment.Exit(0);
         }
 
         private void close(object sender, System.ComponentModel.CancelEventArgs e)
         {
             closeevent?.Invoke(this, new EventArgs());
+        }
+
+        private void openblock(object sender, RoutedEventArgs e)
+        {
+            FileBrowser browser = new FileBrowser(".area", "AREA file");
+            string fname=browser.GetFileName(FileBrowser.EFileOperations.Open);
+            File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/.clicklocker/blockedareas/selectedpath.txt", fname);
         }
     }
 }

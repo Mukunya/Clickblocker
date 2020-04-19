@@ -7,10 +7,11 @@
                       Width="525"
                       BorderThickness="0" 
                       GlowBrush="Black"
-                      ResizeMode="CanResizeWithGrip" Closing="close">
+                      ResizeMode="CanResizeWithGrip" Closing="close" Topmost="True">
     <StackPanel>
         <Button Height="25" Margin="5" Click="Changepassword">Change password</Button>
-        <Button Height="25" Margin="5" Click="changeblock">Change blocked area</Button>
+        <Button Height="25" Margin="5" Click="changeblock">Create new area</Button>
+        <Button Height="25" Margin="5" Click="openblock">Open saved area</Button>
         <Button Height="25" Margin="5" Click="Exit">Exit</Button>
     </StackPanel>
 </Controls:MetroWindow>

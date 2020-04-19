@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Microsoft_window_manager"
         mc:Ignorable="d"
-        Title="Areaselector" KeyUp="keyup" WindowStyle="None" AllowsTransparency="True" Top="0" Left="0" Topmost="True" Height="450" Width="800"  MouseDown="Mousedown" MouseMove="Mousemove" MouseUp="Mouseup">
+        Title="Areaselector" WindowStyle="None" AllowsTransparency="True" Top="0" Left="0" Topmost="True" Height="450" Width="800"  MouseLeftButtonDown="Mousedown" MouseMove="Mousemove" MouseLeftButtonUp="Mouseup">
     <Window.Background>
         <SolidColorBrush Opacity="0.01" Color="White"/>
     </Window.Background>

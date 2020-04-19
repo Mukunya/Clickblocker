@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Microsoft_window_manager"
         mc:Ignorable="d"
-        Title="Microsoft window manager" AllowsTransparency="True"  ShowInTaskbar="False" WindowStyle="None" Height="450" Width="800" Closing="Close"
+        Title="Area blocker service executable" AllowsTransparency="True"  ShowInTaskbar="False" WindowStyle="None" Height="450" Width="800" Closing="Close"
         Top="0" Left="0" Topmost="True" KeyUp="keup">
     <Window.Background>
         <SolidColorBrush Opacity="0" Color="White"/>

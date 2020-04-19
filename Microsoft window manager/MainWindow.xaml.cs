@@ -22,7 +22,7 @@ namespace Microsoft_window_manager
     /// </summary>
     public partial class MainWindow : Window
     {
-        ConfigWindow config = new ConfigWindow();
+        ConfigWindow config;
         bool AuthClose = false;
         public MainWindow()
         {
@@ -40,7 +40,7 @@ namespace Microsoft_window_manager
             }
             if (!File.Exists(filespath + "/pass.dat"))
             {
-                Window w = new Password_changer(null);
+                Window w = new Password_changer();
                 w.Show();
             }
             if (!File.Exists(filespath+"/blockedareas/selectedpath.txt"))
@@ -53,9 +53,11 @@ namespace Microsoft_window_manager
                 x.Serialize(stream, Rectanglelist);
                 stream.Close();
             }
+            InitalizeBlockingarea();
         }
         private void InitalizeBlockingarea()
         {
+            maincanvas.Children.Clear();
             string filespath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/.clicklocker";
             var stream = File.Open(File.ReadAllText(filespath + "/blockedareas/selectedpath.txt"), FileMode.Open);
             List <Rect> rects= new XmlSerializer(typeof(List<Rect>)).Deserialize(stream) as List<Rect>;
@@ -68,12 +70,13 @@ namespace Microsoft_window_manager
                 rectangle.RenderTransform = new TranslateTransform(item.X, item.Y);
                 maincanvas.Children.Add(rectangle);
             }
+            stream.Close();
         }
         private void Config_closeevent(object sender, EventArgs e)
         {
-            this.Topmost = true;
+            this.Show();
             config.closeevent -= Config_closeevent;
-            config = new ConfigWindow();
+            InitalizeBlockingarea();
         }
 
         private void Close(object sender, System.ComponentModel.CancelEventArgs e)
@@ -90,9 +93,9 @@ namespace Microsoft_window_manager
         {
             if (e.Key==Key.F1)
             {
-                config.Show();
+
+                config = new ConfigWindow();
                 config.closeevent += Config_closeevent;
-                this.Topmost = false;
             }
         }
     }

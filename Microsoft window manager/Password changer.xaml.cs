@@ -25,37 +25,13 @@ namespace Microsoft_window_manager
         {
             InitializeComponent();
         }
-        public Password_changer(object noold)
-        {
-            InitializeComponent();
-            old.IsEnabled = false;
-        }
 
         private void Finish(object sender, RoutedEventArgs e)
         {
-            
-            if (old.IsEnabled)
-            {
-                string filepath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/.clicklocker/pass.dat";
-                if (old.Password==File.ReadAllText(filepath))
-                {
-                    File.WriteAllText(filepath, newpass.Password);
-                    MessageBox.Show("Password changed.");
-                    Close();
-                }
-                else
-                {
-                    MessageBox.Show("Wrong password");
-                }
-            }
-            else
-            {
                 string filepath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/.clicklocker/pass.dat";
                 File.WriteAllText(filepath, newpass.Password);
                 MessageBox.Show("Password set.");
                 Close();
-            }
-
         }
     }
 }
