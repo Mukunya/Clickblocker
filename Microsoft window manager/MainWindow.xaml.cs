@@ -74,7 +74,7 @@ namespace Microsoft_window_manager
         }
         private void Config_closeevent(object sender, EventArgs e)
         {
-            this.Show();
+            
             config.closeevent -= Config_closeevent;
             InitalizeBlockingarea();
         }
