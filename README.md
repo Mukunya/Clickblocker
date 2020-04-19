@@ -33,3 +33,7 @@ To lock it, just close the config window
 To exit press exit in the config window.
 
 Notice: Of course it can be killed in task manager.
+
+Found a bug? Please create a new issue.
+
+Want to contribute? You can do it. Make sure to publish it in a pull request.
